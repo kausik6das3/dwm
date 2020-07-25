@@ -18,8 +18,8 @@ static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#770000";
-//static char selbgcolor[]            = "#005577";
-static char selbgcolor[]            = "#16a085";
+static char selbgcolor[]            = "#005577";
+//static char selbgcolor[]            = "#16a085";
 
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -81,7 +81,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
-#define SUPERL Mod4Mask
+#define SUPER Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -148,6 +148,10 @@ static Key keys[] = {
 	//_________________________CASTOM_BINDINGS______________________________
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & bash /home/kausik/.config/dwm/./i3lock.sh") },
 
+	{ MODKEY,			XK_t,		togglescratch,	{.ui = 0} },
+	{ MODKEY,			XK_y,		togglescratch,	{.ui = 1} },
+	{ MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
+
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} },
@@ -156,20 +160,20 @@ static Key keys[] = {
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
 
-	{ SUPERL,			XK_1,		setlayout,	{.v = &layouts[0]} }, /* tile */
-	{ SUPERL,			XK_2,		setlayout,	{.v = &layouts[1]} }, /* bstack */
-	{ SUPERL,			XK_3,		setlayout,	{.v = &layouts[2]} }, /* spiral */
-	{ SUPERL,			XK_4,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
-	{ SUPERL,			XK_5,		setlayout,	{.v = &layouts[4]} }, /* deck */
-	{ SUPERL,			XK_6,		setlayout,	{.v = &layouts[5]} }, /* monocle */
-	{ SUPERL,			XK_7,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
-	{ SUPERL,			XK_8,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
+	{ SUPER,			XK_1,		setlayout,	{.v = &layouts[0]} }, /* tile */
+	{ SUPER,			XK_2,		setlayout,	{.v = &layouts[1]} }, /* bstack */
+	{ SUPER,			XK_3,		setlayout,	{.v = &layouts[2]} }, /* spiral */
+	{ SUPER,			XK_4,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
+	{ SUPER,			XK_5,		setlayout,	{.v = &layouts[4]} }, /* deck */
+	{ SUPER,			XK_6,		setlayout,	{.v = &layouts[5]} }, /* monocle */
+	{ SUPER,			XK_7,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
+	{ SUPER,			XK_8,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	//_________________________PROGRAMME___BINGINGS**************************
-	{ SUPERL,			XK_Return,	spawn,		SHCMD("brave") },
-	{ SUPERL,			XK_n,		spawn,		SHCMD("nemo") },
-	{ SUPERL,			XK_s,		spawn,		SHCMD("spotify") },
-	{ SUPERL,			XK_r,		spawn,		SHCMD("liferea") },
-	{ SUPERL,			XK_m,		spawn,		SHCMD("rhythmbox") },
+	{ SUPER,			XK_Return,	spawn,		SHCMD("brave") },
+	{ SUPER,			XK_n,		spawn,		SHCMD("nemo") },
+	{ SUPER,			XK_s,		spawn,		SHCMD("spotify") },
+	{ SUPER,			XK_r,		spawn,		SHCMD("liferea") },
+	{ SUPER,			XK_m,		spawn,		SHCMD("rhythmbox") },
 	//_________________________MEDIA__KEYS______****************************
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 5") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 5") },
