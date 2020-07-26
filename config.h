@@ -148,8 +148,8 @@ static Key keys[] = {
 	//_________________________CASTOM_BINDINGS______________________________
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & bash /home/kausik/.config/dwm/./i3lock.sh") },
 
-	{ MODKEY,			XK_t,		togglescratch,	{.ui = 0} },
-	{ MODKEY,			XK_y,		togglescratch,	{.ui = 1} },
+	{ MODKEY,			XK_p,		togglescratch,	{.ui = 0} },
+	{ MODKEY|ShiftMask,		XK_p,		togglescratch,	{.ui = 1} },
 	{ MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
 
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
@@ -177,16 +177,16 @@ static Key keys[] = {
 	//_________________________MEDIA__KEYS______****************************
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 5") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 5") },
-	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("pactl set-sink-mute 0 toggle; kill -44 $(pidof dwmblocks)") },
-        { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("pactl set-sink-volume 0 +5%; kill -44 $(pidof dwmblocks)") },
-        { 0, XF86XK_AudioLowerVolume,   spawn,          SHCMD("pactl set-sink-volume 0 -5%; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+        { 0, XF86XK_AudioRaiseVolume,   spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+        { 0, XF86XK_AudioLowerVolume,   spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
         { 0, XF86XK_AudioPlay,          spawn,          SHCMD("playerctl play-pause") },   
         { 0, XF86XK_AudioPause,         spawn,          SHCMD("playerctl pause") },
        	{ 0, XF86XK_AudioPrev,          spawn,          SHCMD("playerctl previous") },
         { 0, XF86XK_AudioNext,          spawn,          SHCMD("playerctl next") },
 
-	{ MODKEY, 			XK_bracketright,  spawn,          SHCMD("pactl set-sink-volume 0 +5%; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY, 			XK_bracketleft,   spawn,          SHCMD("pactl set-sink-volume 0 -5%; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, 			XK_bracketright,  spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, 			XK_bracketleft,   spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_bracketright,  spawn,          SHCMD("xbacklight -inc 5") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,   spawn,          SHCMD("xbacklight -dec 5") },
 
