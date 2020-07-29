@@ -80,8 +80,9 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
-#define SUPER Mod4Mask
+#define MODKEY 	Mod1Mask
+#define SUPER 	Mod4Mask
+#define MODR 	Mod5Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -168,13 +169,19 @@ static Key keys[] = {
 	{ SUPER,			XK_6,		setlayout,	{.v = &layouts[5]} }, /* monocle */
 	{ SUPER,			XK_7,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
 	{ SUPER,			XK_8,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
-	//_________________________PROGRAMME___BINGINGS**************************
+	//_________________________PROGRAMME___BINGINGS__________________________________
 	{ SUPER,			XK_Return,	spawn,		SHCMD("brave") },
 	{ SUPER,			XK_n,		spawn,		SHCMD("nemo") },
 	{ SUPER,			XK_s,		spawn,		SHCMD("spotify") },
 	{ SUPER,			XK_r,		spawn,		SHCMD("liferea") },
 	{ SUPER,			XK_m,		spawn,		SHCMD("rhythmbox") },
-	//_________________________MEDIA__KEYS______****************************
+	//_________________________Screen ___Settings____________________________
+	{ MODR,				XK_1,		spawn,		SHCMD("/home/kausik/Linux_packages/scripts/screen_1st.sh") },
+	{ MODR,				XK_2,		spawn,		SHCMD("/home/kausik/Linux_packages/scripts/screen_2nd.sh") },
+	{ MODR,				XK_3,		spawn,		SHCMD("/home/kausik/Linux_packages/scripts/screen_left.sh") },
+	{ MODR,				XK_4,		spawn,		SHCMD("/home/kausik/Linux_packages/scripts/screen_right.sh") },	
+	{ MODR,				XK_grave,	spawn,		SHCMD("/home/kausik/Linux_packages/scripts/screen_mirror.sh") },
+	//_________________________MEDIA__KEYS___________________________________
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 5") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 5") },
 	{ 0, XF86XK_AudioMute,          spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
