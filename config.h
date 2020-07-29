@@ -147,7 +147,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_e,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask,	XK_r,      quit,           {1} },
 	//_________________________CASTOM_BINDINGS______________________________
-	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & ~/Linux_packages/scripts/3lock.sh") },
+	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & ~/Linux_packages/scripts/i3lock.sh") },
 
 	{ MODKEY,			XK_p,		togglescratch,	{.ui = 0} },
 	{ MODKEY|ShiftMask,		XK_p,		togglescratch,	{.ui = 1} },
