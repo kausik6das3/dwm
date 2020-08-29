@@ -49,7 +49,7 @@ static const Rule rules[] = {
 	*/
 	/* class    instance      title       	 tags mask    isfloating   isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,       NULL,       	    1 << 8,       0,           0,         0,        -1 },
-	{ "St",       NULL,       NULL,       	    0,            0,           1,         0,        -1 },
+	{ "st",       NULL,       NULL,       	    0,            0,           1,         0,        -1 },
 	{ NULL,       NULL,       "Event Tester",   0,            0,           0,         1,        -1 },
 	{ NULL,      "spterm",    NULL,       	    SPTAG(0),     1,           1,         0,        -1 },
 	{ NULL,      "spcalc",    NULL,       	    SPTAG(1),     1,           1,         0,        -1 },
@@ -103,7 +103,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xfce4-terminal", NULL };
+static const char *termcmd[]  = { "gnome-terminal", NULL };
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
@@ -170,11 +170,12 @@ static Key keys[] = {
 	{ SUPER,			XK_7,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
 	{ SUPER,			XK_8,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	//_________________________PROGRAMME___BINGINGS__________________________________
-	{ SUPER,			XK_Return,	spawn,		SHCMD("brave") },
+	{ SUPER,			XK_b,		spawn,		SHCMD("brave") },
 	{ SUPER,			XK_n,		spawn,		SHCMD("nemo") },
 	{ SUPER,			XK_s,		spawn,		SHCMD("spotify") },
 	{ SUPER,			XK_r,		spawn,		SHCMD("liferea") },
 	{ SUPER,			XK_m,		spawn,		SHCMD("rhythmbox") },
+	{ SUPER,			XK_Print,	spawn,		SHCMD("xfce4-screenshooter") },
 	//_________________________Screen ___Settings____________________________
 	{ MODR,				XK_1,		spawn,		SHCMD("~/Linux_packages/scripts/screen_1st.sh") },
 	{ MODR,				XK_2,		spawn,		SHCMD("~/Linux_packages/scripts/screen_2nd.sh") },
