@@ -103,7 +103,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "gnome-terminal", NULL };
+static const char *termcmd[]  = { "xfce4-terminal", NULL };
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
@@ -147,7 +147,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_e,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask,	XK_r,      quit,           {1} },
 	//_________________________CASTOM_BINDINGS______________________________
-	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & ~/Linux_packages/scripts/i3lock.sh") },
+	{ MODKEY|ControlMask|ShiftMask,	XK_s,      	spawn,       SHCMD("systemctl suspend & ~/Packages/scripts/i3lock.sh") },
 
 	{ MODKEY,			XK_p,		togglescratch,	{.ui = 0} },
 	{ MODKEY|ShiftMask,		XK_p,		togglescratch,	{.ui = 1} },
@@ -177,11 +177,11 @@ static Key keys[] = {
 	{ SUPER,			XK_m,		spawn,		SHCMD("rhythmbox") },
 	{ SUPER,			XK_Print,	spawn,		SHCMD("xfce4-screenshooter") },
 	//_________________________Screen ___Settings____________________________
-	{ MODR,				XK_1,		spawn,		SHCMD("~/Linux_packages/scripts/screen_1st.sh") },
-	{ MODR,				XK_2,		spawn,		SHCMD("~/Linux_packages/scripts/screen_2nd.sh") },
-	{ MODR,				XK_3,		spawn,		SHCMD("~/Linux_packages/scripts/screen_left.sh") },
-	{ MODR,				XK_4,		spawn,		SHCMD("~/Linux_packages/scripts/screen_right.sh") },	
-	{ MODR,				XK_grave,	spawn,		SHCMD("~/Linux_packages/scripts/screen_mirror.sh") },
+	{ MODR,				XK_1,		spawn,		SHCMD("~/Packages/scripts/screen_1st.sh") },
+	{ MODR,				XK_2,		spawn,		SHCMD("~/Packages/scripts/screen_2nd.sh") },
+	{ MODR,				XK_3,		spawn,		SHCMD("~/Packages/scripts/screen_left.sh") },
+	{ MODR,				XK_4,		spawn,		SHCMD("~/Packages/scripts/screen_right.sh") },	
+	{ MODR,				XK_grave,	spawn,		SHCMD("~/Packages/scripts/screen_mirror.sh") },
 	//_________________________MEDIA__KEYS___________________________________
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 5") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 5") },
@@ -204,7 +204,7 @@ static Key keys[] = {
 
 
 	//_________________________LOCK__SCREEN______****************************
-	{ MODKEY|ControlMask,		XK_l,		spawn,	SHCMD("~/Linux_packages/scripts/i3lock.sh") },
+	{ MODKEY|ControlMask,		XK_l,		spawn,	SHCMD("~/Packages/scripts/i3lock.sh") },
 };
 
 /* button definitions */
@@ -218,7 +218,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} },
 	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
 	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
-	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD("st -e vim ~/Linux_packages/dwmblocks/config.h") },
+	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD("st -e vim ~/Packages/dwmblocks/config.h") },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        defaultgaps,	{0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
