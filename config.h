@@ -11,8 +11,8 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Cantarell:size=11", "JoyPixels:pixelsize=11:antialias=true:autohint=true"  };
-static const char dmenufont[]       = "Cantarell:size=11";
+static const char *fonts[]          = { "Cantarel:size=11", "JoyPixels:pixelsize=11:antialias=true:autohint=true"  };
+static const char dmenufont[]       = "Cantarel:size=11";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -171,6 +171,7 @@ static Key keys[] = {
 	{ SUPER,			XK_8,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	//_________________________PROGRAMME___BINGINGS__________________________________
 	{ SUPER,			XK_b,		spawn,		SHCMD("brave") },
+	{ SUPER|ShiftMask,		XK_b,		spawn,		SHCMD("brave --incognito") },
 	{ SUPER,			XK_n,		spawn,		SHCMD("nemo") },
 	{ SUPER,			XK_s,		spawn,		SHCMD("spotify") },
 	{ SUPER,			XK_r,		spawn,		SHCMD("liferea") },
@@ -193,8 +194,8 @@ static Key keys[] = {
        	{ 0, XF86XK_AudioPrev,          spawn,          SHCMD("playerctl previous") },
         { 0, XF86XK_AudioNext,          spawn,          SHCMD("playerctl next") },
 
-	{ MODKEY, 			XK_bracketright,  spawn,          SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY, 			XK_bracketleft,   spawn,          SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, 			XK_bracketright,  spawn,          SHCMD("pamixer --allow-boost -i 1; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, 			XK_bracketleft,   spawn,          SHCMD("pamixer --allow-boost -d 1; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,		XK_bracketright,  spawn,          SHCMD("xbacklight -inc 5") },
 	{ MODKEY|ShiftMask,		XK_bracketleft,   spawn,          SHCMD("xbacklight -dec 5") },
 
